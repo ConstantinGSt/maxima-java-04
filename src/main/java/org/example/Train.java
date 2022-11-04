@@ -1,39 +1,24 @@
 package org.example;
 
+import org.jetbrains.annotations.NotNull;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+@Data
+@RequiredArgsConstructor
 public class Train extends Transport {
 	
 	public Train(String name, int capacity, int speed, float costOfKm) {
 		super(name, capacity, speed, costOfKm);
 	}
 	
-	private String id = "";
+	@NotNull	
+	private String id;
+	@NotNull
 	private int carriageCount;
+	@NotNull
 	private boolean isExpress;
 	
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public int getCarriageCount() {
-		return carriageCount;
-	}
-
-	public void setCarriageCount(int carriageCount) {
-		this.carriageCount = carriageCount;
-	}
-
-	public boolean isExpress() {
-		return isExpress;
-	}
-
-	public void setExpress(boolean isExpress) {
-		this.isExpress = isExpress;
-	}
-
 	@Override
 	public float getPrice(City arg0) {
 		// TODO Auto-generated method stub
